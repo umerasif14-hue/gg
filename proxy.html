@@ -10,24 +10,31 @@ header{display:flex;align-items:center;justify-content:space-between;gap:16px;pa
 nav{display:flex;gap:10px;flex-wrap:wrap}a,button{font:inherit}.btn{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;border:1px solid #344239;border-radius:10px;padding:9px 14px;color:#f4f7f4;background:#171d19;cursor:pointer}.btn.primary{background:var(--green);border-color:var(--green);color:#061108;font-weight:800}
 main{max-width:1400px;margin:0 auto;padding:22px}.intro{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;margin-bottom:16px}h1{font-size:clamp(26px,4vw,38px);margin:0 0 5px}.sub{color:var(--muted);margin:0}
 .quicksearch{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}.quicksearch input{flex:1 1 260px;min-width:0;padding:12px 14px;border:1px solid #344239;border-radius:10px;background:#101712;color:#fff;font:inherit}.notice{border:1px solid #2c3c31;background:#101712;border-radius:12px;padding:12px 14px;color:#c6d1c8;margin:14px 0}
-.framewrap{height:calc(100vh - 300px);min-height:400px;border:1px solid #2b352e;border-radius:14px;overflow:hidden;background:#111}iframe{width:100%;height:100%;border:0;background:#111}footer{padding:12px 0;color:#7e8a81;font-size:13px}
-@media(max-width:600px){header{align-items:flex-start;flex-direction:column}.framewrap{height:65vh;min-height:360px}main{padding:14px}}
+.browsergrid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.browsercard{min-width:0;border:1px solid #2b352e;border-radius:14px;overflow:hidden;background:#111}.browserhead{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 12px;background:#141a16;border-bottom:1px solid #2b352e}.browserhead strong{font-size:14px}.framewrap{height:calc(100vh - 350px);min-height:390px;background:#111}iframe{width:100%;height:100%;border:0;background:#111}.browserhead .btn{padding:5px 9px;font-size:13px}
+.music{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:14px 0;padding:12px 14px;border:1px solid #2b352e;border-radius:12px;background:#101712}.music strong{margin-right:auto}.music audio{max-width:100%;width:320px;height:36px}footer{padding:12px 0;color:#7e8a81;font-size:13px}
+@media(max-width:800px){.browsergrid{grid-template-columns:1fr}.framewrap{height:65vh;min-height:360px}}@media(max-width:600px){header{align-items:flex-start;flex-direction:column}main{padding:14px}}
 </style></head>
 <body>
-<header><div class="brand">G<span>G</span> / PROXY</div><nav><a class="btn" href="./arcade.html">← Back to Arcade</a><a class="btn primary" href="https://gust-browser.vercel.app/" target="_blank" rel="noopener noreferrer">Open full proxy ↗</a></nav></header>
+<header><div class="brand">G<span>G</span> / PROXY</div><nav><a class="btn" href="./arcade.html">← Back to Arcade</a><a class="btn primary" href="https://gust-browser.vercel.app/" target="_blank" rel="noopener noreferrer">Open GUST ↗</a></nav></header>
 <main>
-<section class="intro"><div><h1>Proxy Browser</h1><p class="sub">Search the web or enter a website address.</p></div></section>
+<section class="intro"><div><h1>Proxy Browser</h1><p class="sub">Two browser options, plus background music controls.</p></div></section>
 <form class="quicksearch" id="quickSearch"><input id="address" aria-label="Search or enter a website" placeholder="Search anything or enter a website address…" autocomplete="url" required><button class="btn primary" type="submit">Search / Go ↗</button></form>
-<div class="notice"><strong>Quick search:</strong> searches open in Google and website addresses open in a new tab. For the full GUST browser, use “Open full proxy.” Some websites cannot be embedded inside other pages.</div>
-<div class="framewrap"><iframe src="https://gust-browser.vercel.app/" title="GUST Browser" loading="lazy" referrerpolicy="no-referrer" allow="fullscreen; autoplay; clipboard-read; clipboard-write"></iframe></div>
-<footer>GG is not affiliated with GUST. Use websites you’re authorized to access. Games may only run when their providers allow it.</footer>
+<div class="notice"><strong>Heads-up:</strong> the search box opens results or sites in a new tab. Some sites block being embedded here; if a panel is blank, use its “Open in new tab” button.</div>
+<section class="music"><strong>🎵 Background music</strong><span id="musicStatus" class="sub">Press Play to start the built-in music.</span><audio id="music" controls loop preload="none"><source src="https://cdn.pixabay.com/download/audio/2022/10/25/audio_946b6b8c4c.mp3?filename=lofi-study-112191.mp3" type="audio/mpeg">Your browser does not support audio.</audio></section>
+<div class="browsergrid">
+ <section class="browsercard"><div class="browserhead"><strong>Browser 1 · GUST</strong><a class="btn" href="https://gust-browser.vercel.app/" target="_blank" rel="noopener noreferrer">Open in new tab ↗</a></div><div class="framewrap"><iframe src="https://gust-browser.vercel.app/" title="GUST browser" loading="lazy" referrerpolicy="no-referrer" allow="fullscreen; autoplay; clipboard-read; clipboard-write"></iframe></div></section>
+ <section class="browsercard"><div class="browserhead"><strong>Browser 2 · DuckDuckGo</strong><a class="btn" href="https://duckduckgo.com/" target="_blank" rel="noopener noreferrer">Open in new tab ↗</a></div><div class="framewrap"><iframe src="https://duckduckgo.com/" title="DuckDuckGo browser search" loading="lazy" referrerpolicy="no-referrer"></iframe></div></section>
+</div>
+<footer>GG is not affiliated with GUST or DuckDuckGo. Music starts only when you press play. Some sites block embedding and may need to be opened separately.</footer>
 </main>
 <script>
 document.getElementById("quickSearch").addEventListener("submit",function(e){
  e.preventDefault();const q=document.getElementById("address").value.trim();if(!q)return;let target;
  if(/^https?:\/\//i.test(q)){target=q}
  else if(/^[a-z0-9-]+(\.[a-z0-9-]+)+([/:?#].*)?$/i.test(q)&&!q.includes(" ")){target="https://"+q}
- else{target="https://www.google.com/search?q="+encodeURIComponent(q)}
+ else{target="https://duckduckgo.com/?q="+encodeURIComponent(q)}
  window.open(target,"_blank","noopener,noreferrer");
 });
+document.getElementById("music").addEventListener("play",()=>{document.getElementById("musicStatus").textContent="Music playing";});
+document.getElementById("music").addEventListener("pause",()=>{document.getElementById("musicStatus").textContent="Music paused";});
 </script></body></html>
