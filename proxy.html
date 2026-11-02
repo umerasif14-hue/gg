@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090b0a">
+  <title>GG Proxy</title>
+  <style>
+    :root{color-scheme:dark;--bg:#090b0a;--panel:#111512;--green:#39e66b;--muted:#a6b0a8}
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:#f4f7f4;font:16px/1.5 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 22px;border-bottom:1px solid #253029;background:#0d100e}
+    .brand{font-weight:900;letter-spacing:.08em;font-size:22px}.brand span{color:var(--green)}
+    nav{display:flex;gap:10px;flex-wrap:wrap}
+    a,button{font:inherit}
+    .btn{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;border:1px solid #344239;border-radius:10px;padding:9px 14px;color:#f4f7f4;background:#171d19;cursor:pointer}
+    .btn.primary{background:var(--green);border-color:var(--green);color:#061108;font-weight:800}
+    main{max-width:1400px;margin:0 auto;padding:22px}
+    .intro{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;margin-bottom:16px}
+    h1{font-size:clamp(26px,4vw,38px);margin:0 0 5px}.sub{color:var(--muted);margin:0}
+    .notice{border:1px solid #2c3c31;background:#101712;border-radius:12px;padding:12px 14px;color:#c6d1c8;margin:14px 0}
+    .framewrap{height:calc(100vh - 230px);min-height:480px;border:1px solid #2b352e;border-radius:14px;overflow:hidden;background:#111}
+    iframe{width:100%;height:100%;border:0;background:#111}
+    footer{padding:12px 0;color:#7e8a81;font-size:13px}
+    @media(max-width:600px){header{align-items:flex-start;flex-direction:column}.framewrap{height:70vh;min-height:420px}main{padding:14px}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">G<span>G</span> / PROXY</div>
+    <nav>
+      <a class="btn" href="./arcade.html">← Back to Arcade</a>
+      <a class="btn primary" href="https://gust-browser.vercel.app/" target="_blank" rel="noopener noreferrer">Open GUST in new tab ↗</a>
+    </nav>
+  </header>
+  <main>
+    <section class="intro">
+      <div><h1>Proxy Browser</h1><p class="sub">A separate browser page for trying compatible websites and games.</p></div>
+    </section>
+    <div class="notice"><strong>If the browser below stays blank:</strong> the provider may block being displayed inside another page. Use “Open GUST in new tab” above. A proxy cannot guarantee every game will run or override a game's own security restrictions.</div>
+    <div class="framewrap"><iframe src="https://gust-browser.vercel.app/" title="GUST Browser" loading="lazy" referrerpolicy="no-referrer" allow="fullscreen; autoplay; clipboard-read; clipboard-write"></iframe></div>
+    <footer>GG is not affiliated with GUST. External browser service is provided by its own maintainers. Use websites you’re authorized to access.</footer>
+  </main>
+</body>
+</html>
