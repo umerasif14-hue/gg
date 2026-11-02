@@ -51,7 +51,7 @@ body:after{width:440px;height:440px;right:-230px;top:35%;border:1px solid rgba(1
 </section>
 </main>
 <script>
-document.getElementById("portalForm").addEventListener("submit",function(e){e.preventDefault();document.getElementById("notice").style.display="block";document.getElementById("pass").value=""});
+document.getElementById("portalForm").addEventListener("submit",function(e){e.preventDefault();location.href="arcade.html";});
 // Type GG once to open the games. Type GG three times quickly (the first GG plus two more) to open DuckDuckGo instead.
 let typed="",lastKeyAt=0,ggCount=0,resetTimer=null,openTimer=null;
 document.addEventListener("keydown",function(e){
