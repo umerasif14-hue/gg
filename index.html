@@ -52,7 +52,22 @@ body:after{width:440px;height:440px;right:-230px;top:35%;border:1px solid rgba(1
 </main>
 <script>
 document.getElementById("portalForm").addEventListener("submit",function(e){e.preventDefault();document.getElementById("notice").style.display="block";document.getElementById("pass").value=""});
-let typed="",last=0;document.addEventListener("keydown",function(e){if(e.ctrlKey||e.metaKey||e.altKey)return;if(e.target.matches("input,textarea,select"))return;const now=Date.now();if(now-last>1200)typed="";last=now;if(e.key.length===1)typed+=e.key.toLowerCase();typed=typed.slice(-2);if(typed==="gg"){location.href="arcade.html";typed=""}});
+// Type GG once to open the games. Type GG three times quickly (the first GG plus two more) to open DuckDuckGo instead.
+let typed="",lastKeyAt=0,ggCount=0,resetTimer=null,openTimer=null;
+document.addEventListener("keydown",function(e){
+ if(e.ctrlKey||e.metaKey||e.altKey||e.key.length!==1)return;
+ if(e.target.matches("input,textarea,select"))return;
+ const now=Date.now();
+ if(now-lastKeyAt>1200){typed="";ggCount=0;clearTimeout(resetTimer);clearTimeout(openTimer);}
+ lastKeyAt=now;typed=(typed+e.key.toLowerCase()).slice(-2);
+ if(typed==="gg"){
+   ggCount++;typed="";
+   clearTimeout(openTimer);clearTimeout(resetTimer);
+   if(ggCount>=3){location.href="https://duckduckgo.com/";return;}
+   openTimer=setTimeout(()=>{location.href="arcade.html";},1300);
+   resetTimer=setTimeout(()=>{ggCount=0;},3500);
+ }
+});
 </script>
 </body>
 </html>
