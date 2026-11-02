@@ -1,40 +1,15 @@
 <!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#090b0a">
-<title>GG Proxy</title>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#090b0a"><title>GG Search</title>
 <style>
-:root{color-scheme:dark;--bg:#090b0a;--green:#39e66b;--muted:#a6b0a8}*{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:#f4f7f4;font:16px/1.5 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
-header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 22px;border-bottom:1px solid #253029;background:#0d100e}.brand{font-weight:900;letter-spacing:.08em;font-size:22px}.brand span{color:var(--green)}
-nav{display:flex;gap:10px;flex-wrap:wrap}a,button{font:inherit}.btn{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;border:1px solid #344239;border-radius:10px;padding:9px 14px;color:#f4f7f4;background:#171d19;cursor:pointer}.btn.primary{background:var(--green);border-color:var(--green);color:#061108;font-weight:800}
-main{max-width:1400px;margin:0 auto;padding:22px}.intro{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;margin-bottom:16px}h1{font-size:clamp(26px,4vw,38px);margin:0 0 5px}.sub{color:var(--muted);margin:0}
-.quicksearch{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}.quicksearch input{flex:1 1 260px;min-width:0;padding:12px 14px;border:1px solid #344239;border-radius:10px;background:#101712;color:#fff;font:inherit}.notice{border:1px solid #2c3c31;background:#101712;border-radius:12px;padding:12px 14px;color:#c6d1c8;margin:14px 0}
-.browsergrid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.browsercard{min-width:0;border:1px solid #2b352e;border-radius:14px;overflow:hidden;background:#111}.browserhead{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 12px;background:#141a16;border-bottom:1px solid #2b352e}.browserhead strong{font-size:14px}.framewrap{height:calc(100vh - 350px);min-height:390px;background:#111}iframe{width:100%;height:100%;border:0;background:#111}.browserhead .btn{padding:5px 9px;font-size:13px}
-.music{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:14px 0;padding:12px 14px;border:1px solid #2b352e;border-radius:12px;background:#101712}.music strong{margin-right:auto}.music audio{max-width:100%;width:320px;height:36px}footer{padding:12px 0;color:#7e8a81;font-size:13px}
-@media(max-width:800px){.browsergrid{grid-template-columns:1fr}.framewrap{height:65vh;min-height:360px}}@media(max-width:600px){header{align-items:flex-start;flex-direction:column}main{padding:14px}}
-</style></head>
-<body>
-<header><div class="brand">G<span>G</span> / PROXY</div><nav><a class="btn" href="./arcade.html">← Back to Arcade</a><a class="btn primary" href="https://gust-browser.vercel.app/" target="_blank" rel="noopener noreferrer">Open GUST ↗</a></nav></header>
-<main>
-<section class="intro"><div><h1>Proxy Browser</h1><p class="sub">Two browser options, plus background music controls.</p></div></section>
-<form class="quicksearch" id="quickSearch"><input id="address" aria-label="Search or enter a website" placeholder="Search anything or enter a website address…" autocomplete="url" required><button class="btn primary" type="submit">Search / Go ↗</button></form>
-<div class="notice"><strong>Heads-up:</strong> the search box opens results or sites in a new tab. Some sites block being embedded here; if a panel is blank, use its “Open in new tab” button.</div>
-<section class="music"><strong>🎵 Background music</strong><span id="musicStatus" class="sub">Press Play to start the built-in music.</span><audio id="music" controls loop preload="none"><source src="https://cdn.pixabay.com/download/audio/2022/10/25/audio_946b6b8c4c.mp3?filename=lofi-study-112191.mp3" type="audio/mpeg">Your browser does not support audio.</audio></section>
-<div class="browsergrid">
- <section class="browsercard"><div class="browserhead"><strong>Browser 1 · GUST</strong><a class="btn" href="https://gust-browser.vercel.app/" target="_blank" rel="noopener noreferrer">Open in new tab ↗</a></div><div class="framewrap"><iframe src="https://gust-browser.vercel.app/" title="GUST browser" loading="lazy" referrerpolicy="no-referrer" allow="fullscreen; autoplay; clipboard-read; clipboard-write"></iframe></div></section>
- <section class="browsercard"><div class="browserhead"><strong>Browser 2 · DuckDuckGo</strong><a class="btn" href="https://duckduckgo.com/" target="_blank" rel="noopener noreferrer">Open in new tab ↗</a></div><div class="framewrap"><iframe src="https://duckduckgo.com/" title="DuckDuckGo browser search" loading="lazy" referrerpolicy="no-referrer"></iframe></div></section>
-</div>
-<footer>GG is not affiliated with GUST or DuckDuckGo. Music starts only when you press play. Some sites block embedding and may need to be opened separately.</footer>
-</main>
+:root{color-scheme:dark;--bg:#090b0a;--green:#39e66b;--muted:#a6b0a8}*{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 50% 0%,#173321 0,transparent 55%),var(--bg);color:#f4f7f4;font:16px/1.5 system-ui,sans-serif}header{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:16px 22px;border-bottom:1px solid #253029;background:#0d100e}.brand{font-weight:900;letter-spacing:.08em;font-size:22px}.brand span{color:var(--green)}nav{display:flex;gap:10px;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;border:1px solid #344239;border-radius:10px;padding:10px 14px;color:#f4f7f4;background:#171d19;cursor:pointer;font:inherit}.primary{background:var(--green);border-color:var(--green);color:#061108;font-weight:800}main{max-width:900px;margin:0 auto;padding:clamp(28px,8vh,90px) 20px}h1{font-size:clamp(32px,6vw,54px);line-height:1.05;margin:0 0 10px;letter-spacing:-1.5px}.sub{color:var(--muted);margin:0 0 25px}.search{display:flex;gap:9px;flex-wrap:wrap}.search input{flex:1 1 280px;min-width:0;padding:15px 16px;border:1px solid #344239;border-radius:12px;background:#101712;color:white;font:inherit;outline:none}.search input:focus{border-color:var(--green);box-shadow:0 0 0 3px #39e66b22}.notice{margin-top:22px;border:1px solid #2c3c31;background:#101712;border-radius:12px;padding:14px;color:#c6d1c8}.shortcuts{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.music{margin-top:30px;padding:14px;border:1px solid #2b352e;border-radius:12px;background:#101712;display:flex;gap:12px;align-items:center;flex-wrap:wrap}.music strong{margin-right:auto}.music audio{width:300px;max-width:100%}footer{margin-top:26px;color:#7e8a81;font-size:12px}@media(max-width:560px){header{align-items:flex-start;flex-direction:column}main{padding-top:48px}}
+</style></head><body>
+<header><div class="brand">G<span>G</span> / SEARCH</div><nav><a class="btn" href="./arcade.html">← Back to Games</a></nav></header>
+<main><h1>Search the web.</h1><p class="sub">Search with DuckDuckGo or enter a website address.</p>
+<form class="search" id="searchForm"><input id="query" aria-label="Search or website address" placeholder="Search or enter a website…" autocomplete="url" required><button class="btn primary" type="submit">Search ↗</button></form>
+<div class="shortcuts"><a class="btn" href="https://duckduckgo.com/" target="_blank" rel="noopener noreferrer">Open DuckDuckGo ↗</a><a class="btn" href="https://www.google.com/" target="_blank" rel="noopener noreferrer">Open Google ↗</a></div>
+<div class="notice"><strong>Why not show search results inside this page?</strong><br>Some search engines block being embedded inside another website. This page sends your search directly to DuckDuckGo in the same tab instead, so it works without a blocked frame. This is a search page, not a network proxy.</div>
+<section class="music"><strong>🎵 Background music</strong><audio controls loop preload="none"><source src="https://cdn.pixabay.com/download/audio/2022/10/25/audio_946b6b8c4c.mp3?filename=lofi-study-112191.mp3" type="audio/mpeg">Your browser does not support audio.</audio></section>
+<footer>Music starts when you press play. GG is an independent demo and is not affiliated with DuckDuckGo.</footer></main>
 <script>
-document.getElementById("quickSearch").addEventListener("submit",function(e){
- e.preventDefault();const q=document.getElementById("address").value.trim();if(!q)return;let target;
- if(/^https?:\/\//i.test(q)){target=q}
- else if(/^[a-z0-9-]+(\.[a-z0-9-]+)+([/:?#].*)?$/i.test(q)&&!q.includes(" ")){target="https://"+q}
- else{target="https://duckduckgo.com/?q="+encodeURIComponent(q)}
- window.open(target,"_blank","noopener,noreferrer");
-});
-document.getElementById("music").addEventListener("play",()=>{document.getElementById("musicStatus").textContent="Music playing";});
-document.getElementById("music").addEventListener("pause",()=>{document.getElementById("musicStatus").textContent="Music paused";});
+document.getElementById("searchForm").addEventListener("submit",function(e){e.preventDefault();const q=document.getElementById("query").value.trim();if(!q)return;let target;if(/^https?:\/\//i.test(q)){target=q}else if(/^[a-z0-9-]+(\.[a-z0-9-]+)+([/:?#].*)?$/i.test(q)&&!q.includes(" ")){target="https://"+q}else{target="https://duckduckgo.com/?q="+encodeURIComponent(q)}location.href=target;});
 </script></body></html>
